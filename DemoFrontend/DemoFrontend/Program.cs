@@ -13,7 +13,7 @@ namespace DemoFrontend
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeForm());
+            Application.Run(new Forms.EmployeeForm());
         }
     }
 }
