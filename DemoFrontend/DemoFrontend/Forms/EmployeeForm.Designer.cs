@@ -30,10 +30,10 @@
         {
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.firstName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lastName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dateCreated = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -68,10 +68,10 @@
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
+            this.id,
             this.firstName,
             this.lastName,
-            this.gridColumn4});
+            this.dateCreated});
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -79,25 +79,29 @@
             this.gridView.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridView.OptionsBehavior.ReadOnly = true;
             this.gridView.OptionsNavigation.AutoFocusNewRow = true;
+            this.gridView.OptionsView.ShowAutoFilterRow = true;
+            this.gridView.OptionsView.ShowGroupPanel = false;
             this.gridView.ShowingPopupEditForm += new DevExpress.XtraGrid.Views.Grid.ShowingPopupEditFormEventHandler(this.gridView_ShowingPopupEditForm);
             this.gridView.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView_InitNewRow);
             this.gridView.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView_ValidatingEditor);
             // 
-            // gridColumn1
+            // id
             // 
-            this.gridColumn1.Caption = "Employee ID";
-            this.gridColumn1.FieldName = "Id";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.ReadOnly = true;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.id.Caption = "Employee ID";
+            this.id.FieldName = "Id";
+            this.id.Name = "id";
+            this.id.OptionsColumn.AllowEdit = false;
+            this.id.OptionsColumn.ReadOnly = true;
+            this.id.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.id.Visible = true;
+            this.id.VisibleIndex = 0;
             // 
             // firstName
             // 
             this.firstName.Caption = "First Name";
             this.firstName.FieldName = "FirstName";
             this.firstName.Name = "firstName";
+            this.firstName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.firstName.Visible = true;
             this.firstName.VisibleIndex = 1;
             // 
@@ -106,18 +110,20 @@
             this.lastName.Caption = "Last Name";
             this.lastName.FieldName = "LastName";
             this.lastName.Name = "lastName";
+            this.lastName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.lastName.Visible = true;
             this.lastName.VisibleIndex = 2;
             // 
-            // gridColumn4
+            // dateCreated
             // 
-            this.gridColumn4.Caption = "Date Created";
-            this.gridColumn4.FieldName = "DateCreated";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.OptionsColumn.ReadOnly = true;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.dateCreated.Caption = "Date Created";
+            this.dateCreated.FieldName = "DateCreated";
+            this.dateCreated.Name = "dateCreated";
+            this.dateCreated.OptionsColumn.AllowEdit = false;
+            this.dateCreated.OptionsColumn.ReadOnly = true;
+            this.dateCreated.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.dateCreated.Visible = true;
+            this.dateCreated.VisibleIndex = 3;
             // 
             // ribbonControl
             // 
@@ -259,9 +265,9 @@
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn id;
         private DevExpress.XtraGrid.Columns.GridColumn firstName;
         private DevExpress.XtraGrid.Columns.GridColumn lastName;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn dateCreated;
     }
 }
